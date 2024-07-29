@@ -1,13 +1,19 @@
 'use client'
 
 import { Copy, Computer } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast"
+
 
 export default function StarterDummy() {
+    const { toast } = useToast()
   const txt = 'git clone https://github.com/Naol-bm/nextjs-shadcn-starter-kit-koo.git'
 
   const copyText = ()=>{
     navigator.clipboard.writeText(txt)
-        alert('txt copied to z clipboard')
+        toast({
+            title: "HAPPY CODING",
+            description: "also dont forget your coffee",
+          })
   }
     return (
     <div className="flex justify-between py-[2.5%] bg-primary text-secondary w-full gap-8 items-center flex-col h-screen">
